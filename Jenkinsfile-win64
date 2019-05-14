@@ -78,7 +78,7 @@ def BuildWin64() {
     bat """
     cd python-package\\dist
     COPY /B ..\\..\\tests\\ci_build\\insert_vcomp140.py
-    conda activate && for /R %%i in (*.whl) DO python insert_vcomp140.py "%%i"
+    conda activate && python insert_vcomp140.py *.whl
     """
     echo 'Stashing Python wheel...'
     stash name: 'xgboost_whl', includes: 'python-package/dist/*.whl'
