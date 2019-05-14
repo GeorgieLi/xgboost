@@ -1,5 +1,6 @@
 import sys
 import re
+import zipfile
 
 if len(sys.argv) != 2:
     print('Usage: {} [wheel]'.format(sys.argv[0]))
